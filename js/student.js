@@ -1,3 +1,4 @@
+"option strict" //turns off the ability to create a new value without using let or var
 class Student {
     name;
     favcolor;
@@ -21,7 +22,7 @@ let students = [
   new Student("Betty","orange", 3),
   new Student("Pebbles","pink", 2)
 ];
-
+//below is creating the table dynamically
 const display = () => {
     let tbody = document.getElementById("tbody");
     tbody.innerHTML = "";
@@ -34,4 +35,14 @@ const display = () => {
      tbody.innerHTML += tr;
        
     }
+}
+
+const save = () => {
+    let name = document.getElementById("name").value;
+    let favcolor = document.getElementById("favcolor").value;
+    let favnumber = document.getElementById("favnumber").value;
+    let student = new Student(name, favcolor, favnumber);
+    students.push(student);
+    console.log(students);
+
 }
